@@ -1,0 +1,57 @@
+major_version: "0"
+minor_version: "1"
+default_target_cpu: "docker"
+
+toolchain {
+    toolchain_identifier: "docker_toolchain"
+    host_system_name: "darwin"
+    target_system_name: "docker-unknown-linux-gnu"
+    target_cpu: "docker"
+    target_libc: "unknown"
+    compiler: "clang"
+    abi_version: "unknown"
+    abi_libc_version: "unknown"
+
+    tool_path {
+        name: "gcc"
+        path: "clang.sh"
+    }
+    tool_path {
+        name: "ld"
+        path: "clang.sh"
+    }
+    tool_path {
+        name: "ar"
+        path: "/bin/false"
+    }
+    tool_path {
+        name: "cpp"
+        path: "/bin/false"
+    }
+    tool_path {
+        name: "gcov",
+        path: "/bin/false"
+    }
+    tool_path {
+        name: "nm"
+        path: "/bin/false"
+    }
+    tool_path {
+        name: "objdump"
+        path: "/bin/false"
+    }
+    tool_path {
+        name: "strip"
+        path: "/bin/false"
+    }
+
+    compiler_flag: "-target"
+    compiler_flag: "x86_64-unknown-linux-gnu"
+    compiler_flag: "-isystem"
+    compiler_flag: "external/docker_toolchain/c++/v1"
+}
+
+default_toolchain {
+    cpu: "docker"
+    toolchain_identifier: "docker_toolchain"
+}

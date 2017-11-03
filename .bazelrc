@@ -1,0 +1,3 @@
+build:docker --crosstool_top=//toolchain:docker
+build:docker --cpu=docker
+build:docker --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
