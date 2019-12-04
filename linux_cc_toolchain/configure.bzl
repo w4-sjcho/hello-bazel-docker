@@ -14,7 +14,7 @@ def _configure_linux_cc_toolchain_impl(repository_ctx):
         )
         toolchains = "{\"darwin\": \":darwin_ct_ng\"}"
     elif cpu == "k8":
-        toolchains = "{\"k8\": \"@local_cc_config//:cc-compiler-k8\"}"
+        toolchains = "{\"k8\": \"@local_config_cc//:cc-compiler-k8\"}"
 
     repository_ctx.template(
         "BUILD",
