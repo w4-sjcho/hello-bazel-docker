@@ -1,6 +1,7 @@
 package(default_visibility = ["//visibility:public"])
 
 load("@//:toolchains/ct_ng_config.bzl", "ct_ng_toolchain_config")
+load("@//:toolchains/utils.bzl", "cc_toolchain_suite_with_optionals")
 
 filegroup(name = "empty")
 
@@ -29,10 +30,10 @@ cc_toolchain(
     toolchain_config = ":ubuntu18_04_from_darwin_config",
 )
 
-cc_toolchain_suite(
+cc_toolchain_suite_with_optionals(
     name = "ubuntu18_04",
     toolchains = {
         "darwin": ":ubuntu18_04_from_darwin",
-        "k8": "@local_config_cc//:toolchain",
+        "k8": "@local_config_cc//:cc-compiler-k8",
     },
 )
