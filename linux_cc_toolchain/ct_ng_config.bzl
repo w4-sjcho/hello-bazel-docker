@@ -1,5 +1,4 @@
 
-# toolchain/cc_toolchain_config.bzl:
 load("@bazel_tools//tools/cpp:cc_toolchain_config_lib.bzl",
      "feature",
      "flag_group",

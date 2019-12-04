@@ -1,2 +1,2 @@
-build:linux_in_docker --crosstool_top=@ubuntu18_04_toolchain//:ubuntu18_04
+build:linux_in_docker --crosstool_top=@linux_cc_toolchain//:toolchain
 build:linux_in_docker --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
