@@ -34,6 +34,6 @@ cc_toolchain_suite_with_optionals(
     name = "ubuntu18_04",
     toolchains = {
         "darwin": ":ubuntu18_04_from_darwin",
-        "k8": "@local_config_cc//:cc-compiler-k8",
+        "k8": "//external:cc-compiler-k8",
     },
 )
